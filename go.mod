@@ -1,4 +1,4 @@
-module github.com/lmatte7/gomesh
+module github.com/phe-sto/gomesh
 
 go 1.16
 

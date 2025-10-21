@@ -10,8 +10,8 @@ import (
 
 	"google.golang.org/protobuf/proto"
 
-	"github.com/lmatte7/gomesh/github.com/meshtastic/gomeshproto"
-	pb "github.com/lmatte7/gomesh/github.com/meshtastic/gomeshproto"
+	"github.com/phe-sto/gomesh/github.com/meshtastic/gomeshproto"
+	pb "github.com/phe-sto/gomesh/github.com/meshtastic/gomeshproto"
 )
 
 // GetChannelInfo returns the current chanels settings for the radio
@@ -118,7 +118,7 @@ func (r *Radio) SetChannelURL(url string) error {
 			return err
 		}
 
-		if err := r.sendPacket(packet); err != nil {
+		if err := r.SendPacket(packet); err != nil {
 			return err
 		}
 	}
@@ -172,7 +172,7 @@ func (r *Radio) AddChannel(name string, cIndex int) error {
 		return err
 	}
 
-	if err := r.sendPacket(packet); err != nil {
+	if err := r.SendPacket(packet); err != nil {
 		return err
 	}
 
@@ -267,7 +267,7 @@ func (r *Radio) SetChannel(chIndex int, key string, value string) error {
 		return err
 	}
 
-	if err := r.sendPacket(packet); err != nil {
+	if err := r.SendPacket(packet); err != nil {
 		return err
 	}
 
@@ -310,7 +310,7 @@ func (r *Radio) DeleteChannel(cIndex int) error {
 		return err
 	}
 
-	if err := r.sendPacket(packet); err != nil {
+	if err := r.SendPacket(packet); err != nil {
 		return err
 	}
 

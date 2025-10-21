@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"strconv"
 
-	pb "github.com/lmatte7/gomesh/github.com/meshtastic/gomeshproto"
+	pb "github.com/phe-sto/gomesh/github.com/meshtastic/gomeshproto"
 	"google.golang.org/protobuf/proto"
 )
 
@@ -565,7 +565,7 @@ func sendAdminMessage(adminPacket pb.AdminMessage, r *Radio) error {
 		return err
 	}
 
-	if err := r.sendPacket(packet); err != nil {
+	if err := r.SendPacket(packet); err != nil {
 		return err
 	}
 
